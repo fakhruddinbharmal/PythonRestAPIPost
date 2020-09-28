@@ -10,7 +10,7 @@ from flask_restful import Resource, Api, reqparse
 app = Flask(__name__)
 
 # Create the API
-app = Api(app)
+api = Api(app)
 app.config["DEBUG"] = True
 
 def get_db():
