@@ -11,6 +11,9 @@ app = Flask(__name__)
 
 # Create the API
 api = Api(app)
+
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+
 @app.route('/',methods=['get'])
 return "hello"
-app.run()
+
