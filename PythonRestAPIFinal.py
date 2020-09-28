@@ -1,6 +1,5 @@
 #import markdown
 import os
-import shelve
 
 # Import the framework
 from flask import Flask, g
