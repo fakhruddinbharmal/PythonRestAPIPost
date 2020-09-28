@@ -11,8 +11,6 @@ app = Flask(__name__)
 
 # Create the API
 api = Api(app)
-app.config["DEBUG"] = True
-
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
@@ -41,4 +39,4 @@ def post():
     shelf[args['unique_id']] = args
 
     return {'message': 'Record Created', 'data': args}, 201
-app.run(port=5002)
+app.run()
