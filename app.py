@@ -38,4 +38,5 @@ class GetFilling(Resource):
 
         return {'message': 'Record found', 'data': shelf[unique_id]}, 200
     
+    def post(self):
 api.add_resource(GetFilling, '/filing/<string:unique_id>')
