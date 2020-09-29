@@ -29,13 +29,13 @@ def index():
   return "test"
 
 class GetFilling(Resource):
-    def get(self, identifier):
+    def get(self, unique_id):
         shelf = get_db()
 
         # If the key does not exist in the data store, return a 404 error.
-        if not (identifier in shelf):
-            return {'message': 'Device not found', 'data': {}}, 404
+        if not (unique_id in shelf):
+            return {'message': 'Record not found', 'data': {}}, 404
 
-        return {'message': 'Device found', 'data': shelf[identifier]}, 200
+        return {'message': 'Record found', 'data': shelf[unique_id]}, 200
     
-api.add_resource(GetFilling, '/filing/<string:identifier>')
+api.add_resource(GetFilling, '/filing/<string:unique_id>')
