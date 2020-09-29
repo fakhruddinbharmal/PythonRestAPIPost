@@ -13,6 +13,6 @@ app = Flask(__name__)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-@app.route('/',methods=['get'])
-return "test"
-app.run()
+@app.route('/')
+def index():
+  return "test"
