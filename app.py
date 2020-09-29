@@ -8,7 +8,7 @@ from flask_restful import Resource, Api, reqparse
 app = Flask(__name__)
 #app.config["DEBUG"] = True
 # Create the API
-#api = Api(app)
+api = Api(app)
 
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
@@ -34,8 +34,8 @@ class GetFilling(Resource):
 
         # If the key does not exist in the data store, return a 404 error.
         if not (identifier in shelf):
-            return {'message': 'record not found', 'data': {}}, 404
+            return {'message': 'Device not found', 'data': {}}, 404
 
-        return {'message': 'record found', 'data': shelf[identifier]}, 200
-        
+        return {'message': 'Device found', 'data': shelf[identifier]}, 200
+    
 api.add_resource(GetFilling, '/filing/<string:identifier>')
